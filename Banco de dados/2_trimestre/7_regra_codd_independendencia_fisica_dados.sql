@@ -19,3 +19,14 @@ ADD COLUMN `email` VARCHAR(300) NULL AFTER `salarioAtual`,
 ADD COLUMN `dataAdmissao` DATE NULL AFTER `email`;
 
 
+#Relatório que busca dados específicos na tabelas FUNCONARIO e CARGO e com a data formatada, usando a função 'date format' 
+select f.nome as "Nome do funcionário",  #apelidando o campo no relatório
+f.carTrab as "Carteira de trabalho",   #apelidando o campo no relatório
+ date_format(f.dataAdmissao,"%d/%m/%Y") as "data de admissão",  #serve para formatar a data no formato brasileiro
+ c.nome as "Cargo ocupado"   #apelidando o campo no relatório
+ from funconario as f inner join cargo as c
+ on f.cargo_codCargo = c.codCargo;  #o final das comparações após o inner join deve ser igual
+
+
+#mostrar o total de itens cadastraos em uma tabela
+select count(*) as "Total de funcionários" from funconario;
