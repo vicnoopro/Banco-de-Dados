@@ -20,9 +20,10 @@ UPDATE `autoescola2d`.`carro` SET `corcarro` = 'Preto' WHERE (`cod_carro` = '1')
 
 #Regra 8 : Independencia lógica dos dados
 create view vi_relatorioCompleto as(
-select c.cod_carro, m.nome as  "Marca do carro",
+select m.nome as  "Marca do carro",
  c.modelo as "Modelo", 
-c.corcarro, c.chassi as "Chassi",
+c.corcarro as "Cor do Carro",
+ c.chassi as "Chassi",
  c.anodeproducao as "Ano de Produção" from carro as c
  inner join marca as m on c.marca_codMarca = m.codmarca);
 
