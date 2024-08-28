@@ -15,4 +15,9 @@ inner join itensVenda as iV on p.codProduto = iV.produto_codProduto);
 select * from vi_notinha;
 
 
+select v.codVenda, c.nomeCliente, v.tipoPagamento from venda as v inner join
+inner join produto as p,
+ cliente as c on v.cliente_codCliente= c.codCliente;
+
+
 
