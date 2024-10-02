@@ -1,0 +1,3 @@
+SET @VALOR = 25;
+CALL pr_quadrado(@VALOR);
+SELECT @VALOR;
