@@ -1,1 +1,0 @@
-CALL pr_olaMundo;
